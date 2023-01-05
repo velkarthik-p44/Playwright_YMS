@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "experimental-allure-playwright": "^0.0.3"
+  }
+}

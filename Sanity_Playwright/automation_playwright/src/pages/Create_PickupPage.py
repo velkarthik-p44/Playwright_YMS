@@ -1,3 +1,6 @@
+from playwright.sync_api import expect
+
+
 class CreatePickupPage:
 
     def __init__(self, page):
@@ -27,6 +30,8 @@ class CreatePickupPage:
         self._nextpage1 = page.get_by_role("button", name="Next Step")
         self._nextpage2 = page.get_by_role("button", name="Next Step")
         self._savepickup = page.get_by_role("button", name="Save Pickup")
+
+
 
     def click_shipment(self):
         self._clickshipment.click()
@@ -97,6 +102,7 @@ class CreatePickupPage:
     def next_page2(self):
         self._nextpage2.click()
 
+
     def save_pickup(self):
         self._savepickup.click()
 
@@ -121,6 +127,8 @@ class CreatePickupPage:
         self.next_page1()
         self.next_page2()
         self.save_pickup()
+
+
 
 
 

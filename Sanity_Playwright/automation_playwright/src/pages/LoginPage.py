@@ -1,3 +1,4 @@
+from Configurations.config import UserLogin
 from automation_playwright.src.pages.Create_PickupPage import CreatePickupPage
 
 
@@ -20,9 +21,17 @@ class LoginPage:
         self._login_btn.click()
 
     def do_login(self, credentials):
+
         self.enter_emailaddress(credentials['emailaddress'])
         self.enter_password(credentials['password'])
         self.click_login()
+
+
+    # def do_login( self, emailaddress, password ):
+    #     self.enter_emailaddress(emailaddress)
+    #     self.enter_password(password)
+    #     self.click_login()
+
 
 
 

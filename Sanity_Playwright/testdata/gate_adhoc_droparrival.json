@@ -1,0 +1,14 @@
+{
+  "Shipment Num#": "SHPDA3",
+  "Trailer Num#": "TRAILERDA3",
+  "SEAL1" : "seal1",
+  "SEAL2" : "seal2",
+  "CAB" : "cab001",
+  "DRIVER CELL" : "2345678901",
+  "FIRST NAME" : "DROP",
+  "LAST NAME" : "ARRIVAL",
+  "EMAIL" : "drop@arriv.in",
+  "COMMENTS" : "QA COMMENTS"
+
+
+}

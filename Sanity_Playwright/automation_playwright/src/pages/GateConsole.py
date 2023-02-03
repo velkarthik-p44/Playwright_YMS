@@ -35,7 +35,7 @@ class GateConsole:
         self._selectgate.click()
 
     def submit_onselection(self):            #Submit after Choosing the Site and Gate
-        self._submitbutton.click(timeout=100)
+        self._submitbutton.click()
 
     def gateconsole(self):
         self.click_gate()

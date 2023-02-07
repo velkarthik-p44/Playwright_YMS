@@ -2,11 +2,14 @@ import random
 import string
 from concurrent.futures import thread
 
-class GateAdhocDropArrival:
+class GateAdhocDropHook:
 
     def __init__(self, page):
         self.page = page
         self._clickdrop = page.get_by_role("button", name="Drop")
+
+        #DropHook Toggle
+        self._toggledrophook = page.get_by_text("Drop Hook")
 
         #Shipment Num
         self._clickshipment = page.locator("#mat-input-0")
@@ -47,16 +50,21 @@ class GateAdhocDropArrival:
         # self._enterdriverlicense = page.locator("#driver_license_arrival")
         # self._clicklicensestate = page.locator("#driver_license_state_arrival")
         # self._enterlicensestate = page.locator("#driver_license_state_arrival")
+        self._toggleemptypickup = page.locator("//label[normalize-space()='Empty']")
         self._clickcomments = page.locator("#comments_arrival")
         self._entercomments = page.locator("#comments_arrival")
 
-        #Arrival Button
-        self._actionarrival = page.get_by_role("button", name="Arrival")
+
+        #Drop Hook Arrival Button
+        self._actionhookarrival = page.get_by_role("button", name="Arrival")
 
 
 
     def click_drop(self):
         self._clickdrop.click()
+
+    def toggle_drophook(self):
+        self._toggledrophook.click()
 
     def click_shipmentnum(self):
         self._clickshipment.click()
@@ -136,47 +144,52 @@ class GateAdhocDropArrival:
     # def enter_licensestate(self, lstate):
     #     self._enterlicensestate.fill(lstate)
 
+    def toggle_emptypickup(self):
+        self._toggleemptypickup.click()
+
     def click_comments(self):
         self._clickcomments.click()
 
     def enter_comments(self, comments):
         self._entercomments.fill(comments)
 
-    def live_arrival(self):
-        self._actionarrival.click()
+    def drophook_arrival(self):
+        self._actionhookarrival.click()
 
 
-    def droparrival(self, dropdetails):
+    def drophookarrival(self, drophookdetails):
         self.click_drop()
+        self.toggle_drophook()
         self.click_shipmentnum()
-        self.enter_shipmentnum(dropdetails['Shipment Num#'])
+        self.enter_shipmentnum(drophookdetails['Shipment Num#'])
         self.click_trailernum()
-        self.enter_trailernum(dropdetails['Trailer Num#'])
+        self.enter_trailernum(drophookdetails['Trailer Num#'])
         self.choose_scac()
         self.select_scac()
         self.choosetype()
         self.selecttype()
         self.click_seal1()
-        self.enter_seal1(dropdetails['SEAL1'])
+        self.enter_seal1(drophookdetails['SEAL1'])
         self.click_seal2()
-        self.enter_seal2(dropdetails['SEAL2'])
+        self.enter_seal2(drophookdetails['SEAL2'])
         self.click_cab()
-        self.enter_cab(dropdetails['CAB'])
+        self.enter_cab(drophookdetails['CAB'])
         self.click_drivercell()
-        self.enter_drivercell(dropdetails['DRIVER CELL'])
+        self.enter_drivercell(drophookdetails['DRIVER CELL'])
         self.click_firstname()
-        self.enter_firstname(dropdetails['FIRST NAME'])
+        self.enter_firstname(drophookdetails['FIRST NAME'])
         self.click_lastname()
-        self.enter_lastname(dropdetails['LAST NAME'])
+        self.enter_lastname(drophookdetails['LAST NAME'])
         self.click_emailid()
-        self.enter_emailid(dropdetails['EMAIL'])
+        self.enter_emailid(drophookdetails['EMAIL'])
         # self.click_driverlicense()
-        # self.enter_driverlicense(dropdetails['DRIVER LICENSE'])
+        # self.enter_driverlicense(drophookdetails['DRIVER LICENSE'])
         # self.click_licensestate()
-        # self.enter_licensestate(dropdetails['LICENSE STATE'])
+        # self.enter_licensestate(drophookdetails['LICENSE STATE'])
+        self.toggle_emptypickup()
         self.click_comments()
-        self.enter_comments(dropdetails['COMMENTS'])
-        self.live_arrival()
+        self.enter_comments(drophookdetails['COMMENTS'])
+        self.drophook_arrival()
 
 
     # def random_generator( size=8, chars=string.ascii_uppercase + string.digits):

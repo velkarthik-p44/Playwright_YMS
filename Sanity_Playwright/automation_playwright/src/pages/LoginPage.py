@@ -1,5 +1,6 @@
 from Configurations.config import UserLogin
 from automation_playwright.src.pages.Create_PickupPage import CreatePickupPage
+from automation_playwright.src.utilis.customeLogger import LogGen
 
 
 class LoginPage:
@@ -8,6 +9,9 @@ class LoginPage:
         self._emailaddress = page.get_by_label("Email Address")
         self._password = page.get_by_label("Password")
         self._login_btn = page.get_by_text("Login")
+
+
+
 
 
     def enter_emailaddress(self, email):

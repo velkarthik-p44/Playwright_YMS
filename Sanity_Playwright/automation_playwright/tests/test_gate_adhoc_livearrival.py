@@ -13,7 +13,8 @@ obj=json.loads(jsondata)
 
 def test_gate_adhoc_livearrival(set_up_tear_down) -> None:
     page = set_up_tear_down
-    credentials = {'emailaddress': 'stagemckeee@yopmail.com', 'password': 'Admin@123'}
+    # credentials = {'emailaddress': 'stagemckeee@yopmail.com', 'password': 'Admin@123'}
+    credentials = {'emailaddress': 'sandboxmckeee@yopmail.com', 'password': 'Admin@123'}
     formdetails = obj
 
     login_p = LoginPage(page)
@@ -22,10 +23,10 @@ def test_gate_adhoc_livearrival(set_up_tear_down) -> None:
     gatecons.gateconsole()
     gatela = GateAdhocLiveArrival(page)
     gatela.livearrival(formdetails)
-    time.sleep(1)
+    time.sleep(10)
 
-def sample(page):
-    formdetails = obj
-    gatela = GateAdhocLiveArrival(page)
-    gatela.livearrival(formdetails)
+# def sample(page):
+#     formdetails = obj
+#     gatela = GateAdhocLiveArrival(page)
+#     gatela.livearrival(formdetails)
 

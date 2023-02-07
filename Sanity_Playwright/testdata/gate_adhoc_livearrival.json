@@ -1,13 +1,13 @@
 {
-  "Shipment Num#": "SHPLA3",
-  "Trailer Num#": "TRAILERLA3",
+  "Shipment Num#": "DEMOSHP21",
+  "Trailer Num#": "DEMOTRA21",
   "SEAL1" : "seal1",
   "SEAL2" : "seal2",
   "CAB" : "cab001",
-  "DRIVER CELL" : "01234567890",
-  "FIRST NAME" : "ABCD",
+  "DRIVER CELL" : "01234567888",
+  "FIRST NAME" : "ABCDE",
   "LAST NAME" : "WXYZ",
-  "EMAIL" : "abcd@abc.in",
+  "EMAIL" : "abcd@abcd.in",
   "COMMENTS" : "QA COMMENTS"
 
 

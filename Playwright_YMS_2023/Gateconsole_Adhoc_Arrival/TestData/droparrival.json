@@ -1,0 +1,13 @@
+{
+  "Shipment Num#": "BOLSN01",
+  "Trailer Num#": "TRNU01",
+  "SEAL1" : "seal1",
+  "SEAL2" : "seal2",
+  "CAB" : "cab001",
+  "DRIVER CELL" : "2222222222",
+  "FIRST NAME" : "DROP",
+  "LAST NAME" : "ARRIVAL",
+  "EMAIL" : "drop@arriv.in",
+  "COMMENTS" : "DROP ARRIVAL"
+
+}

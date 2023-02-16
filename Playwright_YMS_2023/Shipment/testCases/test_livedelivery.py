@@ -16,12 +16,12 @@ class CreateLiveDeliveryJSON:
         livedeliverydetails = obj
         return obj
 
-def test_createlivedelivery(set_up_tear_down) -> None:
+def test_livedelivery(set_up_tear_down) -> None:
     page = set_up_tear_down
     credentials = {'emailaddress': ReadConfig.getUseremail(), 'password': ReadConfig.getPassword()}
     login_p = LoginPage(page)
     login_p.do_login(credentials)
-    dropdel = CreateLiveDelivery(page)
-    dropdel.newlivedelivery(CreateLiveDeliveryJSON.getlivedeliveryjson())
+    livedel = CreateLiveDelivery(page)
+    livedel.newlivedelivery(CreateLiveDeliveryJSON.getlivedeliveryjson())
     time.sleep(5)
 

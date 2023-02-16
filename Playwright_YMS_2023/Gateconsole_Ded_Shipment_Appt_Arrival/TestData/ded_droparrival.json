@@ -1,13 +1,13 @@
 {
-  "Shipment Num#": "DROPARRIVAL2",
-  "Trailer Num#": "TRAILERDROP2",
+  "Shipment Num#": "DDELGT50",
+  "Trailer Num#": "tradedcd3",
   "SEAL1" : "seal1",
   "SEAL2" : "seal2",
   "CAB" : "cab001",
-  "DRIVER CELL" : "2222222222",
+  "DRIVER CELL" : "2345678901",
   "FIRST NAME" : "DROP",
   "LAST NAME" : "ARRIVAL",
   "EMAIL" : "drop@arriv.in",
-  "COMMENTS" : "DROP ARRIVAL"
+  "COMMENTS" : "DEDICATED SHIPMENT APPT"
 
 }

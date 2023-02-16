@@ -15,7 +15,7 @@ class CreateLivePickupJSON:
         livepickupdetails = obj
         return obj
 
-def test_createlivepickup(set_up_tear_down) -> None:
+def test_livepickup(set_up_tear_down) -> None:
     page = set_up_tear_down
     # Login
     credentials = {'emailaddress': ReadConfig.getUseremail(), 'password': ReadConfig.getPassword()}

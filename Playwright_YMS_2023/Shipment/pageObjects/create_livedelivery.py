@@ -79,14 +79,13 @@ class CreateLiveDelivery:
         self._nextpage2.click()
 
 
-    def save_pickup(self):
+    def save_delivery(self):
         self._savedelivery.click()
 
     def newlivedelivery(self, livedeliverydetails):
         self.click_shipment()
         self.select_delivery()
         self.create_delivery()
-
         self.enter_shipment(livedeliverydetails['Shipment#'])
         self.choose_site()
         self.select_site()
@@ -102,7 +101,7 @@ class CreateLiveDelivery:
         self.enter_lp(livedeliverydetails['LP'])
         self.next_page1()
         self.next_page2()
-        self.save_pickup()
+        self.save_delivery()
 
 
 

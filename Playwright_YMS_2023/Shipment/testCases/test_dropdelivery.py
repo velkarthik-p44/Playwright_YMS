@@ -15,7 +15,7 @@ class CreateDropDeliveryJSON:
         deliverydetails = obj
         return obj
 
-def test_crepickup(set_up_tear_down) -> None:
+def test_dropdel(set_up_tear_down) -> None:
     page = set_up_tear_down
     credentials = {'emailaddress': ReadConfig.getUseremail(), 'password': ReadConfig.getPassword()}
     login_p = LoginPage(page)

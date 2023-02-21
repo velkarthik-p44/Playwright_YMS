@@ -1,3 +1,4 @@
+import time
 
 
 class Gate_Adhoc_Drop_Departure():
@@ -5,7 +6,8 @@ class Gate_Adhoc_Drop_Departure():
     def __init__(self, page):
         self.page = page
         self._clicknewdeparture = page.locator("//span[normalize-space()='New Departure']")
-        self._ddtrailerlist = page.locator("*[name='asset_type_arrival']").nth(1)
+        # self._ddtrailerlist = page.locator("*[name='asset_type_arrival']").nth(1)
+        self._ddtrailerlist = page.locator("//ml-select[@ng-reflect-placeholder='Trailer']")
         self._entertrailernum = page.get_by_role("textbox", name="multiselect-search")
         self._selectentertrailernum = page.locator("//ml-select[@ng-reflect-placeholder='Trailer']//li").nth(2)
         # self._selectentertrailernum = page.locator("#gate-console-departure")
@@ -35,7 +37,9 @@ class Gate_Adhoc_Drop_Departure():
     def gate_drop_departure(self, dropdepartdetails):
         self.click_newdeparture()
         self.click_ddtrailerlist()
+        time.sleep(5)
         self.enter_trailernum(dropdepartdetails['TRAI#'])
+        time.sleep(5)
         self.select_trailernum()
         self.select_confirmdepart()
         self.depart()

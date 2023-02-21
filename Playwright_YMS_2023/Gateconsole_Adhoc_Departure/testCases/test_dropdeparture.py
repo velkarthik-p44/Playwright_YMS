@@ -15,7 +15,7 @@ class DropDepartureJSON:
         myjsonfile=open("C:/Users/VelKarthik/PycharmProjects/Playwright_YMS_2023/Gateconsole_Adhoc_Departure/TestData/dropdeparture.json", "r")
         jsondata=myjsonfile.read()
         obj=json.loads(jsondata)
-        values = obj
+        dropdepartdetails = obj
         return obj
 
 def test_drop_departure(set_up_tear_down) -> None:

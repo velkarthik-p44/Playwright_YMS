@@ -6,7 +6,7 @@ class Gate_Adhoc_Live_Departure():
     def __init__(self, page):
         self.page = page
         self._clicknewdeparture = page.locator("//span[normalize-space()='New Departure']")
-        self._ldtrailerlist = page.locator("*[name='asset_type_arrival']").nth(1)
+        self._ldtrailerlist = page.locator("//ml-select[contains(@name,'asset_type_arrival')]")
         self._entertrailernum = page.get_by_role("textbox", name="multiselect-search")
         self._selectentertrailernum = page.locator("//ml-select[@ng-reflect-placeholder='Trailer']//li").nth(2)
         self._confirmdepart = page.locator("#gate-console-departure").get_by_role("button", name="Depart")

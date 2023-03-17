@@ -27,6 +27,7 @@ def test_drop_departure(set_up_tear_down) -> None:
     #Gate Console
     gatecons = GateConsole(page)
     gatecons.gateconsole()
+
     #Adhoc Drop Departure
     dddepart = Gate_Adhoc_Drop_Departure(page)
     dddepart.gate_drop_departure(DropDepartureJSON.getdropdeparturejson())

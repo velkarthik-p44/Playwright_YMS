@@ -146,6 +146,8 @@ class GateAdhocDropArrival:
         self._actionarrival.click()
 
 
+
+
     def droparrival(self, dropdetails):
         self.click_drop()
         self.click_shipmentnum()

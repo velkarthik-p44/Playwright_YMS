@@ -53,5 +53,10 @@ class GateConsole:
         self.select_gate()
         self.submit_onselection()
 
+    def saved_gateconsole(self):
+        self.click_gate()
+        self.click_console()
+
+
 
 

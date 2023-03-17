@@ -2,10 +2,10 @@ import json
 import time
 
 from Gate.pageObjects.gateconsole import GateConsole
-from Gateconsole_Adhoc_Arrival.pageObjects.droparrival import GateAdhocDropArrival
-from Gateconsole_Adhoc_Arrival.testCases.test_droparrival import DropArrivalJSON
-from Gateconsole_Adhoc_Departure.pageObjects.dropdeparture import Gate_Adhoc_Drop_Departure
-from Gateconsole_Adhoc_Departure.testCases.test_dropdeparture import DropDepartureJSON
+from Gateconsole_Adhoc_Arrival.pageObjects.livearrival import GateAdhocLiveArrival
+from Gateconsole_Adhoc_Arrival.testCases.test_livearrival import LiveArrivalJSON
+from Gateconsole_Adhoc_Departure.pageObjects.livedeparture import Gate_Adhoc_Live_Departure
+from Gateconsole_Adhoc_Departure.testCases.test_livedeparture import LiveDepartureJSON
 from Login.pageObjects.login import LoginPage
 from Trailer.pageObjects.trailer_bump import TrailerBump
 from Trailer.pageObjects.trailer_listing import TrailerListing
@@ -31,10 +31,10 @@ def test_adhoc_trailer_arrival(set_up_tear_down) -> None:
     gatecons.gateconsole()
     print("Gate Console - Success")
 
-    # Arrival of Adhoc Drop Trailer
-    gateda = GateAdhocDropArrival(page)
-    gateda.droparrival(DropArrivalJSON.getdroparrivaljson())
-    print("Adhoc Arrival - Drop Trailer")
+    # Arrival of Adhoc Live Trailer
+    gatela = GateAdhocLiveArrival(page)
+    gatela.livearrival(LiveArrivalJSON.getlivearrivaljson())
+    print("Adhoc Arrival - Live Trailer")
     time.sleep(2)
 
     # Trailer Listing
@@ -73,8 +73,8 @@ def test_adhoc_trailer_arrival(set_up_tear_down) -> None:
     print("Redirected to Gate Console - Success")
     time.sleep(2)
 
-    # Adhoc Drop Departure
-    dddepart = Gate_Adhoc_Drop_Departure(page)
-    dddepart.gate_drop_departure(DropDepartureJSON.getdropdeparturejson())
-    print("Adhoc Departure - Drop Trailer")
+    # Adhoc Live Departure
+    lvdepart = Gate_Adhoc_Live_Departure(page)
+    lvdepart.gate_live_departure(LiveDepartureJSON.getlivedeparturejson())
+    print("Adhoc Departure - Live Trailer")
     time.sleep(5)

@@ -7,9 +7,11 @@ class TrailerPull:
         self.page = page
         #Create Pull
         self._clickpull = page.locator("//i[@class='icons fas fa-arrow-right ml-1']")
-        self._clickcondition = page.locator("//span[@title='Choose Condition']")
-        self._selectcondition = page.locator("//div[@class='multiselect-item-text']")
-        self._clickcommodity = page.locator("//span[@title='Choose Commodity']")
+        self._roundtrip = page.get_by_text("?")
+        self._turnofftoggle = page.locator("//label[normalize-space()='Yes']")
+        # self._clickcondition = page.locator("//span[@title='Choose Condition']")
+        # self._selectcondition = page.locator("//div[@class='multiselect-item-text']")
+        self._clickcommodity = page.locator("(//span[@class='dropdown-multiselect__caret'])[14]")
         self._selectcommodity = page.locator("(//div[@class='form-group column m-0'])[3]//div")
         self._visibletext = page.get_by_label("Assigned To Driver")
 
@@ -35,11 +37,14 @@ class TrailerPull:
     def click_pull(self):
         self._clickpull.nth(0).click()
 
-    def click_condition(self):
-        self._clickcondition.click()
+    def turnoff_roundtrip(self):
+        self._turnofftoggle.click()
 
-    def select_condition(self):
-        self._selectcondition.nth(2).click()
+    # def click_condition(self):
+    #     self._clickcondition.click()
+    #
+    # def select_condition(self):
+    #     self._selectcondition.nth(2).click()
 
     def click_commodity(self):
         self._clickcommodity.click()
@@ -93,10 +98,19 @@ class TrailerPull:
 
     def pulltrailer(self):
         self.click_pull()
-        # self.click_condition()
-        # self.select_condition()
+        if self._roundtrip.is_visible():
+            self.turnoff_roundtrip()
+            # self.click_commodity()
+            # self.select_commodity()
+            print("Round Trip Available")
+        else:
+            # self.click_commodity()
+            # self.select_commodity()
+            print("Round Trip Option Not Available")
+
         self.click_commodity()
         self.select_commodity()
+
         if self._visibletext.is_visible():
             self.toggle_assigndriver()
             self.click_driver()

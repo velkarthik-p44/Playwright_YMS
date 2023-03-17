@@ -7,6 +7,7 @@ class TrailerBump:
         self.page = page
         #Create Spot
         self._clickbump = page.locator("(//i[@class='icons fas fa-arrow-up ml-1'])[1]")
+        self._visibletext = page.get_by_label("Assigned To Driver")
         self._toggledriver = page.locator("//input[@id='auto_assign']")
         self._clickdriver = page.locator("//sui-select[@name='driver']")
         self._selectdriver = page.locator("//div[@class='assets']")
@@ -77,17 +78,30 @@ class TrailerBump:
 
     def bumptrailer(self):
         self.click_bump()
-        self.toggle_driver()
-        self.click_driver()
-        self.select_driver()
-        self.create_bump()
+        if self._visibletext.is_visible():
+            self.toggle_driver()
+            self.click_driver()
+            self.select_driver()
+            self.create_bump()
+
+        else:
+            self.create_bump()
+
         self.confirm_bump()
-        self.start()
-        self.confirm_start()
-        self.hook()
-        self.confirm_hook()
-        self.complete()
-        self.confirm_complete()
+
+        if self._start.is_visible():
+            self.start()
+            self.confirm_start()
+            self.hook()
+            self.confirm_hook()
+            self.complete()
+            self.confirm_complete()
+        else:
+            self.hook()
+            self.confirm_hook()
+            self.complete()
+            self.confirm_complete()
+
         self.close_popup()
 
 
